@@ -1,0 +1,41 @@
+﻿@model List<User>
+
+<div class="container mt-4">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var user in Model)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="@user.ImagePath" class="card-img-top" alt="@user.FirstName @user.LastName" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">@user.FirstName @user.LastName</h5>
+                        <p class="card-text">
+                            <strong>Email:</strong> @user.Email
+                        </p>
+                        <p class="card-text text-muted">
+                            <small>ID: @user.Id.ToString().Substring(0, 8)...</small>
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <a asp-controller="User" asp-action="Index" asp-route-id="@user.Id" class="btn btn-outline-secondary btn-sm" >Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .card {
+        transition: transform 0.2s;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        }
+
+    .card-img-top {
+        object-fit: cover;
+    }
+</style>

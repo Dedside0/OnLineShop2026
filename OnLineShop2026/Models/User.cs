@@ -8,7 +8,7 @@
         public string Email { get; set; }
         public string ImagePath { get; set; }
 
-        public User( string lastName, string firstName, string email, string imagePath)
+        public User( string lastName, string firstName, string email, string imagePath = "images/chel.jpg")
         {
             LastName = lastName;
             FirstName = firstName;
