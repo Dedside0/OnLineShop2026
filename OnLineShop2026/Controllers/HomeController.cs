@@ -7,8 +7,12 @@ namespace OnLineShop2026.Controllers
 {
     public class HomeController : Controller
     {
-        ProductRepositoryFromFile productRepository = new ProductRepositoryFromFile();
-        //ProductRepositoryInMemory productRepository = new ProductRepositoryInMemory();
+        IProductRepository productRepository;
+
+        public HomeController(IProductRepository productRepository)
+        {
+            this.productRepository = productRepository;
+        }
 
         public IActionResult Index()
         {

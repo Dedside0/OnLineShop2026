@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace OnLineShop2026.Data
 {
-    public class ProductRepositoryFromFile
+    public class ProductRepositoryFromFile : IProductRepository
     {
         private static List<Product> products = new List<Product>();
 
@@ -14,7 +14,7 @@ namespace OnLineShop2026.Data
         }
 
         public List<Product> GetAll()
-        { 
+        {
             return products;
         }
 

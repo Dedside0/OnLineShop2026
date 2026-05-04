@@ -2,7 +2,7 @@
 
 namespace OnLineShop2026.Data
 {
-    public class ProductRepositoryInMemory
+    public class ProductRepositoryInMemory : IProductRepository
     {
         private static List<Product> products = new List<Product>()
         {

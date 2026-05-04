@@ -9,7 +9,10 @@
         <h5 class="card-title">@Model.Name</h5>
         <p class="card-text">@Model.Description</p>
         <p class="card-subtitle">@Model.Cost р.</p>
-        <a href="/Home/Catalog" class="btn btn-primary">В каталог</a>
+        <a class="btn btn-primary" 
+            asp-controller="Cart" 
+            asp-action="Add"
+            asp-route-idProduct="@Model.Id">В корзину</a>
     </div>
 </div>
 
