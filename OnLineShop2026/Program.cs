@@ -1,10 +1,23 @@
+using Microsoft.EntityFrameworkCore;
+using OnlineShopp.DB;
 using OnLineShop2026.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<IProductRepository, ProductRepositoryInMemory>();
+
+// получить строку обращения к БД
+string connection = builder.Configuration.GetConnectionString("DBonlineShop");
+
+// подлючить контекст
+builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(connection));
+
+
+// создать репозиторий
+builder.Services.AddTransient<IProductsDBRepository, ProductsDBRepository>();
+
+//builder.Services.AddSingleton<IProductRepository, ProductRepositoryInMemory>();
 builder.Services.AddSingleton<ICartRepository, CartRepositoryInMemory>();
 
 var app = builder.Build();
