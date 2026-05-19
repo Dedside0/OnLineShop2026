@@ -22,7 +22,7 @@ namespace OnLineShop2026.Controllers
 
         public IActionResult Catalog()
         {
-            var listProducts = productRepository.GetAll();
+            List<ProductDB> listProducts = productRepository.GetAll();
             return View(listProducts);
         }
 
