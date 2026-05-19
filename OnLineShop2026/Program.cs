@@ -18,7 +18,7 @@ builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(c
 builder.Services.AddTransient<IProductsDBRepository, ProductsDBRepository>();
 
 //builder.Services.AddSingleton<IProductRepository, ProductRepositoryInMemory>();
-builder.Services.AddSingleton<ICartRepository, CartRepositoryInMemory>();
+//builder.Services.AddSingleton<ICartRepository, CartRepositoryInMemory>();
 
 var app = builder.Build();
 

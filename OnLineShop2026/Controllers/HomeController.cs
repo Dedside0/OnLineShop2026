@@ -2,14 +2,15 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using OnLineShop2026.Data;
 using OnLineShop2026.Models;
+using OnlineShopp.DB;
 
 namespace OnLineShop2026.Controllers
 {
     public class HomeController : Controller
     {
-        IProductRepository productRepository;
+        IProductsDBRepository productRepository;
 
-        public HomeController(IProductRepository productRepository)
+        public HomeController(IProductsDBRepository productRepository)
         {
             this.productRepository = productRepository;
         }

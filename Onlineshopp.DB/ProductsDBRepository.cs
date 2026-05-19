@@ -7,12 +7,7 @@ namespace OnlineShopp.DB
         private readonly DatabaseContext dbContext;
         public ProductsDBRepository(DatabaseContext dbContext)
         {
-            dbContext = dbContext;
-        }
-
-        public List<ProductDB> GetAll()
-        {
-            return dbContext.ProductDBs.ToList();
+            this.dbContext = dbContext;
         }
 
         void IProductsDBRepository.Add(ProductDB product)
@@ -22,7 +17,10 @@ namespace OnlineShopp.DB
 
         List<ProductDB> IProductsDBRepository.GetAll()
         {
-            throw new NotImplementedException();
+            var temp = dbContext.ProductDBs;
+            if (temp != null)
+                return temp.ToList();
+            return null;
         }
 
         ProductDB IProductsDBRepository.TryGetById(Guid id)
