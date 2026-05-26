@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using OnLineShop2026.Data;
+using OnLineShop2026.Helpers;
 using OnLineShop2026.Models;
 using OnlineShopp.DB;
 
@@ -23,7 +24,7 @@ namespace OnLineShop2026.Controllers
         public IActionResult Catalog()
         {
             List<ProductDB> listProducts = productRepository.GetAll();
-            return View(listProducts);
+            return View(Mapping.ToListProduct(listProducts));
         }
 
     }
