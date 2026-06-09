@@ -1,0 +1,47 @@
+﻿@model Cart
+@{
+    ViewData["Title"] = "Пользователь";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Корзина</h1>
+    @if (@Model == null || Model.CartItems.Count == 0)
+    {
+        <h3>У вас еще нет товаров</h3>
+    }
+    else
+    {
+    <div>
+        Полная стоимость товаров - <b>@Model.Cost</b>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Товар</td>
+                <td>Стоимость</td>
+                <td>Количество</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CartItems)
+            {
+                <tr>
+                    <td>@item.Product.Name</td>
+                    <td>@item.Product.Cost</td>
+                    <td>@item.Amount</td>
+                    <td><a class="btn btn-outline-primary" 
+                        asp_controller="Cart" 
+                        asp-action="Increment" 
+                        asp-route-id="@item.Product.Id" 
+                        role="button">+</a>
+                        <a class="btn btn-outline-primary" 
+                        role="button"
+                        asp-action="Decrement" 
+                        asp-route-id="@item.Product.Id"
+                        >-</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    }
+</div>

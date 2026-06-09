@@ -8,13 +8,18 @@
         public decimal Cost { get; set; }
         public string PathImage { get; set; }
         
-        public Product(string name, string description, decimal cost, string pathImage)
+        public Product(string name, string description, decimal cost, string pathImage):this()
         {
-            Id = Guid.NewGuid();
+            
             Name = name;
             Description = description;
             PathImage = pathImage;
             Cost = cost;
+        }
+
+        public Product() 
+        {
+            Id = Guid.NewGuid();
         }
 
         public override string ToString()

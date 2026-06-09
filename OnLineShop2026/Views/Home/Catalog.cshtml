@@ -14,7 +14,7 @@
                 <p class="card-subtitle">@product.Cost р.</p>
                 <p class="card-text">@product.Id</p>
                 <!--  <a href="/product/index/@product.Id" class="btn btn-primary">Подробнее</a> -->
-                <a asp-area="" asp-controller = "product" asp-action="index" asp-route-id = "@product.Id" class="btn btn-primary">Подробнее</a>
+                <a asp-controller = "product" asp-action="index" asp-route-id = "@product.Id" class="btn btn-primary">Подробнее</a>
             </div>
         </div>
     }

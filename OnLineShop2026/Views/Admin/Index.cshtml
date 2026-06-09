@@ -1,0 +1,35 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Администратор";
+}
+<main>
+    <div class="text-center">
+    <h1 class="display-4">Список товаров</h1>
+    @await Html.PartialAsync("SideBar")
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Название</th>
+                    <th scope="col">Цена</th>
+                    <th scope="col">Ред</th>
+                </tr>
+            </thead>
+            <tbody>
+                 @foreach(var product in @Model)
+                    {
+                        <tr>
+                            <th scope="row">@product.Id</th>
+                            <td>@product.Name</td>
+                            <td>@product.Cost</td>
+                            <td>
+                            <a asp-controller="admin" asp-action="EditProduct" asp-route-id="@product.Id">ред</a>
+                            </td>
+                        </tr>
+                    }
+            </tbody>
+        </table>
+
+</div>
+</main>
+

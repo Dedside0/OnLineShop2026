@@ -1,0 +1,36 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Администратор";
+}
+<main>
+    <div class="text-center">
+    <h1 class="display-4">Редактирование товара</h1>
+    @await Html.PartialAsync("SideBar")
+
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Название продукта</label>
+                <input asp-for="Name" type="text" class="form-control" id="productName" placeholder="Введите название">
+        </div>
+        <div class="mb-3">
+            <label for="productDescription" class="form-label">Описание</label>
+            <textarea asp-for = "Description" class="form-control" id="productDescription" rows="3" placeholder="Краткое описание товара"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="productCost" class="form-label">Стоимость</label>
+            <div class="input-group">
+                <span class="input-group-text">₽</span>
+                <input type="number" step="0.01" class="form-control" id="productCost" placeholder="0.00" asp-for="Cost">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="productImagePath" class="form-label">Ссылка на изображение</label>
+                <input type="text" class="form-control" id="productImagePath" placeholder="https://example.com" asp-for="PathImage">
+            <div id="imageHelp" class="form-text">Укажите прямой путь к файлу изображения.</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Сохранить продукт</button>
+    </form>
+</div>
+</main>
+

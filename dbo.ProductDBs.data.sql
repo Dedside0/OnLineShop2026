@@ -1,0 +1,1 @@
+﻿INSERT INTO [dbo].[ProductDBs] ([Id], [Name], [Description], [Cost], [PathPicture]) VALUES (N'daa0c1cf-7572-47b5-b565-577142018127', N'Колбаса', N'копченая', CAST(1000.00 AS Decimal(18, 2)), N'https://moretorg55.ru/d/763c5388b8a310c97cc46f0bbeab94fb.jpg')

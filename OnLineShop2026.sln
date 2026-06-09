@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnLineShop2026", "OnLineShop2026\OnLineShop2026.csproj", "{84AD5495-AA27-4362-B449-C9E77EFF8A4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onlineshopp.DB", "Onlineshopp.DB\Onlineshopp.DB.csproj", "{BAD43644-F7A7-43C6-B4C2-96ED126FE1DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{84AD5495-AA27-4362-B449-C9E77EFF8A4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84AD5495-AA27-4362-B449-C9E77EFF8A4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84AD5495-AA27-4362-B449-C9E77EFF8A4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAD43644-F7A7-43C6-B4C2-96ED126FE1DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAD43644-F7A7-43C6-B4C2-96ED126FE1DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAD43644-F7A7-43C6-B4C2-96ED126FE1DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAD43644-F7A7-43C6-B4C2-96ED126FE1DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
